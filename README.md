@@ -1,4 +1,4 @@
-# challengeAluraBackEnd
+# Challenge AluraFlix (BackEnd)
 <h1>Tecnologia utilizada</h1>
 <ul>
 	<li><a href="#">?<a></li>
