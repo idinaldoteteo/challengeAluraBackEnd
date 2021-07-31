@@ -22,4 +22,4 @@
 
 
 <h1>Curiosidades</h1>
-<p>Em desenvolvimeno...</p>
+<p>Em desenvolvimento...</p>
