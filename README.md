@@ -10,7 +10,7 @@
 <h1>Tecnologias utilizadas</h1>
 	<ul>
 		<li>JAVA 11</li>
-		<li>Spring Boot</li>
+		<li>Spring Boot 2.1.4.RELEASE</li>
 		<li>MySQL</li>
 		<li>JPA + Hibernate</li>
 		<li>Postman</li>
