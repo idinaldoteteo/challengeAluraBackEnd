@@ -9,11 +9,10 @@
 
 <h1>Tecnologia utilizada</h1>
 	<ul>
-		<li><a href="#">JAVA 11<a></li>
-		<li><a href="#">Spring Boot<a></li>
-		<li><a href="#">MySQL<a></li>
-		<li><a href="#">Maven<a></li>
-		<li><a href="#">JPA + Hibernate<a></li>
+		<li>JAVA 11</li>
+		<li>Spring Boot</li>
+		<li>MySQL</li>
+		<li>JPA + Hibernate</li>
 	</ul>
 
 
