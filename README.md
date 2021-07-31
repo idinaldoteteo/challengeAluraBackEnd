@@ -13,7 +13,7 @@
 		<li>Spring Boot</li>
 		<li>MySQL</li>
 		<li>JPA + Hibernate</li>
-		<li>JPA + Hibernate</li>
+		<li>Postman</li>
 	</ul>
 
 
