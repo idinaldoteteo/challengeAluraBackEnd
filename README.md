@@ -7,17 +7,18 @@
 	</ul>
 
 
-<h1>Tecnologia utilizada</h1>
+<h1>Tecnologias utilizadas</h1>
 	<ul>
 		<li>JAVA 11</li>
 		<li>Spring Boot</li>
 		<li>MySQL</li>
 		<li>JPA + Hibernate</li>
+		<li>JPA + Hibernate</li>
 	</ul>
 
 
 <h1>Como rodar localmente</h1>
-<p>Em desenvolvimento...</p>
+<p><strong>Utilizar o endereço: </strong>http://localhost:8080/videos</p>
 
 
 <h1>Curiosidades</h1>
