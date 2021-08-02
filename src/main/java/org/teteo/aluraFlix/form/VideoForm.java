@@ -40,13 +40,4 @@ public class VideoForm {
 		return new Video(titulo, descricao, url);
 	}
 	
-	public Video atualizar(Long id, VideoRepository videoRepository) {
-		Video videoRetorno = videoRepository.findById(id).get();
-		videoRetorno.setTitulo(this.titulo);
-		videoRetorno.setDescricao(this.descricao);
-		videoRetorno.setUrl(this.url);
-		
-		return videoRetorno;
-	}
-	
 }
