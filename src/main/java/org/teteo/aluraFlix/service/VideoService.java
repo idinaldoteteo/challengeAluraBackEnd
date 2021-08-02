@@ -1,6 +1,7 @@
 package org.teteo.aluraFlix.service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -19,8 +20,13 @@ public class VideoService {
 	@Autowired
 	private VideoRepository videoRepository;
 	
-	public List<VideoDTO> getTodosVideos() {
-		Iterable<Video> todosVideos = videoRepository.findAll();
+	public List<VideoDTO> getTodosVideos(String search) {
+		Iterable<Video> todosVideos = null;
+		if( Objects.isNull(search)) {
+			todosVideos = videoRepository.findAll();
+		}else {
+			todosVideos = videoRepository.searchByVideoLike(search);
+		}
 		
 		return VideoDTO.converter(todosVideos);
 	}
@@ -51,6 +57,4 @@ public class VideoService {
 	public void delete(Long id) {
 		videoRepository.deleteById(id);
 	}
-
-	
 }

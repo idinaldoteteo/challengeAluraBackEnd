@@ -1,21 +1,21 @@
 package org.teteo.aluraFlix.form;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import org.teteo.aluraFlix.model.Video;
-import org.teteo.aluraFlix.repository.VideoRepository;
 
 public class VideoForm {
 
-	@NotNull @NotEmpty
+	@NotEmpty
 	private String titulo;
 	
-	@NotNull @NotEmpty
+	@NotEmpty
 	private String descricao;
 	
-	@NotNull @NotEmpty
+	@NotEmpty
 	private String url;
+	
+	private String categoriaId;
 	
 	public String getTitulo() {
 		return titulo;
@@ -37,7 +37,14 @@ public class VideoForm {
 	}
 
 	public Video converter() {
-		return new Video(titulo, descricao, url);
+		return new Video(titulo, descricao, url, categoriaId);
 	}
+	public String getCategoriaId() {
+		return categoriaId;
+	}
+	public void setCategoriaId(String categoriaId) {
+		this.categoriaId = categoriaId;
+	}
+
 	
 }

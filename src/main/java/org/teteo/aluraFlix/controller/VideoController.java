@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.teteo.aluraFlix.dto.VideoDTO;
@@ -24,14 +25,19 @@ import org.teteo.aluraFlix.service.VideoService;
 
 @RestController
 @RequestMapping("/videos")
-public class VideosController {
+public class VideoController {
 	
 	@Autowired
 	private VideoService service;
 
 	@GetMapping
 	public List<VideoDTO> getTodosVideos(){
-		return service.getTodosVideos();
+		return service.getTodosVideos(null);
+	}
+	
+	@GetMapping("/search")
+	public List<VideoDTO> getTodosVideos(@RequestParam(required = false) String search ){
+		return service.getTodosVideos(search);
 	}
 	
 	@GetMapping("/{id}")
@@ -57,8 +63,7 @@ public class VideosController {
 		Optional<Video> video = service.getVideo(id);
 		
 		if( video.isPresent()) {
-			VideoDTO videoDTO = service.atualizar(id, form);
-			return ResponseEntity.ok(videoDTO);
+			return ResponseEntity.ok(service.atualizar(id, form));
 		}
 		
 		return ResponseEntity.notFound().build();
@@ -70,7 +75,7 @@ public class VideosController {
 		
 		if( video.isPresent()) {
 			service.delete(id);
-			return ResponseEntity.ok(new VideoDTO(video.get()));
+			return ResponseEntity.ok().build();
 		}
 		
 		return ResponseEntity.notFound().build();

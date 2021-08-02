@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.teteo.aluraFlix.form.VideoForm;
 
@@ -16,15 +17,20 @@ public class Video {
 	private String descricao;
 	private String url;
 	
+	@ManyToOne
+	private Categoria categoria;
+	
 	public Video() {
 	}
 	
-	public Video(String titulo, String descricao, String url) {
+	public Video(String titulo, String descricao, String url, String categoriaId) {
 		super();
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.url = url;
+		this.categoria = categoriaId.isEmpty() ? new Categoria(1L) : new Categoria(Long.valueOf(categoriaId));
 	}
+	
 	public Video(VideoForm form) {
 		this.titulo = form.getTitulo();
 		this.descricao = form.getDescricao();
@@ -79,6 +85,10 @@ public class Video {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
 	}
 	
 }
